@@ -31,4 +31,10 @@ Make a git commit and push.
 
 You may check the History tab under Cloud Build, it should be empty as no tags are yet created.
 
-Now create a git tag, commit and push.
+Now create a git tag v0.0.1, commit and push. ``git push --tags``
+
+Oops, seems like I forgot to add the *cloudbuild.yaml* file!
+
+![Build failed](img/build_failed.png)
+
+Add and commit the *cloudbuild.yaml* file, then make a second tag v0.0.2 and push it to the repo.
