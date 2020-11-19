@@ -25,7 +25,7 @@ steps:
   dir: .
   args: ['--version']
 ```
-When a tag is pushed to the github repository this file will be used. The first argument *name* specifies the image to use, which in this case is a public platformio docker image. A full path may be used to fetch an image from any repository, but in this case an the latest platformio-core image will be fetched from Docker Hub.
+When a tag is pushed to the github repository this file will be used. The first argument *name* specifies the image to use, which in this case is a public platformio docker image. A full path may be used to fetch an image from any repository, but in this case the latest platformio-core image will be fetched from Docker Hub.
 
 Make a git commit and push.
 
@@ -38,3 +38,12 @@ Oops, seems like I forgot to add the *cloudbuild.yaml* file!
 ![Build failed](img/build_failed.png)
 
 Add and commit the *cloudbuild.yaml* file, then make a second tag v0.0.2 and push it to the repo.
+
+Aargh, I forgot to commit cloudbuild.yaml file before I made the tag. A third tag is needed. Now head over to Google Cloud and check the build history:
+
+![Build history](img/build_history.png)
+
+Finally a successful build! Click on the build number to see the details:
+![Build log](img/build_log.png)
+
+Lines 1 to 36 are just the setup of the docker image, then on line 37 the output from the ``--version`` argument is shown. Then the build process finish up on lines 38-39.
