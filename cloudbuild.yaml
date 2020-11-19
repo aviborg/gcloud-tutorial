@@ -1,4 +1,8 @@
 steps:
 - name: 'sglahn/platformio-core:latest'  
   dir: .
-  args: ['--version']
+  args: ['run']  
+artifacts: 
+  objects: 
+    location: 'gs://$gcloud-tutorial-firmwares/$TAG_NAME'
+    paths: ['/workspace/.pio/build/nodemcuv2/firmware.bin']
