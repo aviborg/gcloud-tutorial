@@ -124,3 +124,28 @@ artifacts:
     location: 'gs://$gcloud-tutorial-firmwares/$TAG_NAME'
     paths: ['/workspace/.pio/build/nodemcuv2/firmware.bin']
 ```
+
+Bugger! Failed again! 
+
+![sglahn failed](img/sglahn_failed.png)
+Apparently the latest Docker image from sglahn had some issues (as of 19th November 2020), but I found that ceoloide made a working platformio Docker image. Update the *cloudbuild.yaml* again!
+```yaml
+steps:
+- name: 'ceoloide/platformio-ci:latest'  
+  dir: .
+  args: ['run']  
+artifacts: 
+  objects: 
+    location: 'gs://$gcloud-tutorial-firmwares/$TAG_NAME'
+    paths: ['/workspace/.pio/build/nodemcuv2/firmware.bin']
+```
+
+Make a new tag and push it to github...
+
+Yaeajjj! It builds........
+
+![Wrong bucketname](img/wrong_bucketname.png)
+
+Noooo! It fails as the bucket name is incorrect, seems there is an extra $-symbol right before gcloud. Lets remove that!
+
+

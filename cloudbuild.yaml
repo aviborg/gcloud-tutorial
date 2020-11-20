@@ -4,5 +4,5 @@ steps:
   args: ['run']  
 artifacts: 
   objects: 
-    location: 'gs://$gcloud-tutorial-firmwares/$TAG_NAME'
+    location: 'gs://gcloud-tutorial-firmwares/$TAG_NAME'
     paths: ['/workspace/.pio/build/nodemcuv2/firmware.bin']
