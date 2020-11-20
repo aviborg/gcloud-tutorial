@@ -148,4 +148,13 @@ Yaeajjj! It builds........
 
 Noooo! It fails as the bucket name is incorrect, seems there is an extra $-symbol right before gcloud. Lets remove that!
 
-
+```yaml
+steps:
+- name: 'ceoloide/platformio-ci:latest'  
+  dir: .
+  args: ['run']  
+artifacts: 
+  objects: 
+    location: 'gs://gcloud-tutorial-firmwares/$TAG_NAME'
+    paths: ['/workspace/.pio/build/nodemcuv2/firmware.bin']
+```
