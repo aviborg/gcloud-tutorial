@@ -160,5 +160,5 @@ artifacts:
 ```
 Push it and tag it!
 
-Yes it built and stored the firmware.bin artifact on the cloud storage!
+Yes! It built and stored the firmware.bin artifact on the cloud storage!
 ![Build success](img/build_success.png)
