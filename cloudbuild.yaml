@@ -1,5 +1,5 @@
 steps:
-- name: 'sglahn/platformio-core:latest'  
+- name: 'ceoloide/platformio-ci:latest'  
   dir: .
   args: ['run']  
 artifacts: 
