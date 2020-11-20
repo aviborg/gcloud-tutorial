@@ -158,3 +158,7 @@ artifacts:
     location: 'gs://gcloud-tutorial-firmwares/$TAG_NAME'
     paths: ['/workspace/.pio/build/nodemcuv2/firmware.bin']
 ```
+Push it and tag it!
+
+Yes it built and stored the firmware.bin artifact on the cloud storage!
+![Build success](img/build_success.png)
